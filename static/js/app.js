@@ -48,6 +48,9 @@ cat.app.controller('PinsCtrl', ['$scope', function($scope, server) {
     // TODO take this out when done debugging
     window.$scope = $scope;
 
+    // vibration
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
     $scope.got_data = false;
     $scope.activated_sensor = null;
     $scope.settings_pin = null;
@@ -122,6 +125,8 @@ cat.app.controller('PinsCtrl', ['$scope', function($scope, server) {
     };
 
     var connect_on_client = function(sensor, actuator) {
+        console.log('connect on client - vibrate');
+        navigator.vibrate(200);
         $scope.connections.push({
             source: sensor,
             target: actuator,
