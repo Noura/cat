@@ -1,3 +1,9 @@
+/*
+ * Author: Noura Howell
+ * Date:   July 2014
+ *
+ */
+
 // Contain everything within the cat object
 var cat = {};
 
