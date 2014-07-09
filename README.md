@@ -7,25 +7,22 @@ This repo is the front end code of that application. It  periodically gets porte
 
 For more information about this project, please see https://github.com/IntelOpenDesign/ConnectAnyThing
 
-How to get up and running with this code
-----------------------------------------
+Setup Option 1: Galileo
+-----------------------
+Please follow the instructions at https://github.com/IntelOpenDesign/ConnectAnyThing
 
-### Requirements
+Setup Option 2: Localhost
+-------------------------
+Though the real purpose of this project is to create interconnected physical systems, which requires the Galileo hardware, during front end development it's helpful to just work using localhost, with test-server.js substituting for the Galileo's web server.
+
+Requirements:
 * node (I am on 0.10.29), nodejs-websocket
 * Python (I am on 2.7.2)
 
-### Server setup
-Change the server settings near the top of static/js/app.js depending on your use case.
-* If you are testing on the Galileo, just change cat.on_hardware to true and follow the setup instructions on https://github.com/IntelOpenDesign/ConnectAnyThing
-* If you are hosting test-server.js on your local machine, then cat.on_hardware should be false. To test only on your local machine, and no other devices, no internet connection is required and you can set cat.test_server_url = 'ws://localhost:8001'. If you want to use other devices too, you need internet, and change the <localhost> part to be your local machine's internal IP address, which you can find with the ifconfig command.
-
-### Running it
-* To run it on the Galileo, follow the instructions at https://github.com/IntelOpenDesign/ConnectAnyThing
-* To run with test-server.js, in this directory, on two command lines, get both going at the same time:
-    - node test-server.js
-    - python -m SimpleHTTPServer
-
-### Viewing it
-Supporting Chrome only
-* If you're using test-server.js, navigate to http://localhost:8000 on your local machine or your http://<local IP address>:8000. (It's on port 8000 because python's Simple HTTP Server will automatically host it on port 8000, though there is an option to change this if needed.)
-* If you're using the Galileo, connect to the wifi hotspot it is broadcasting, which is probably called ConnectAnyThing or something similar. Then navigating to any URL should redirect you to the web app.
+Steps:
+1. There are some connection settings near the top of static/js/app.js
+  a. cat.on_hardware = false
+  b. If you just want to test on your local machine, set cat.test_server_url = 'ws://localhost:8001'. If you want other devices to connect to your local machine, set cat.test_server_url = 'ws://<local IP>:8001', where you can find your machine's local IP address with the ifconfig shell command
+2. In the terminal run: node test-server.js
+3. Simultaneously also run: python -m SimpleHTTPServer
+4. Navigate to http://localhost:8000 or http://<local IP>:8000 depending on (1)(b). Please note that only Chrome is offically supported.
