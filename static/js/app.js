@@ -2,7 +2,7 @@
 var cat = {};
 
 // server connection settings
-cat.on_hardware = true; // to switch to Galileo, just change this to true
+cat.on_hardware = false; // to switch to Galileo, just change this to true
 cat.test_server_url = 'ws://localhost:8001';
 cat.hardware_server_url = 'ws://cat/';
 cat.hardware_server_protocol = 'hardware-state-protocol';
@@ -236,7 +236,7 @@ cat.app.controller('AppCtrl', ['$scope', '$routeParams', '$location', 'Galileo',
             $scope.s.got_data = true;
             $scope.d.update(data);
             if ($scope.s.ssid !== data.ssid) {
-                $location.path('/ssid_changed');
+                $location.path('/ssid_changed'); // TODO what's the difference between $location.path and window.location.hash? why use one sometimes or the other? or should I just stick with one all the time?
             }
         }
         $scope.s.ssid = data.ssid;
