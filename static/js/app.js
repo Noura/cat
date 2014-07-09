@@ -759,6 +759,9 @@ cat.app.factory('Galileo', ['$rootScope', function($rootScope) {
     var update_pins = function(ids, attr) {
         var all_pins = get_all_pins();
         var updates = { pins: {} };
+        // TODO if the backend could check for the existence of an attribute,
+        // then we could be more efficient and only send over the CHANGED attrs
+        // instead of ALL attrs
         _.each(ids, function(id) {
             updates.pins[id] = {};
             updates.pins[id][attr] = all_pins[id][attr];
