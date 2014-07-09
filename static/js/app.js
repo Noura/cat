@@ -725,7 +725,6 @@ cat.app.factory('Galileo', ['$rootScope', function($rootScope) {
             message_id: message_id,
             stringified_updates: JSON.stringify(batch),
         };
-        // TODO i think i used to just send connections or pins if there were updates for them.
         var msg_for_server = {
             status: 'OK',
             ssid: batch.ssid,
