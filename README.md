@@ -24,10 +24,13 @@ Though the real purpose of this project is to create interconnected physical sys
 ### Steps:
 1. There are some connection settings near the top of static/js/app.js
 
-    a. You should set cat.on_hardware = false
-
-    b. If you just want to test on your local machine, set cat.test_server_url = 'ws://localhost:8001'. If you want other devices to connect to your local machine, set cat.test_server_url = 'ws://<local IP>:8001', where you can find your machine's local IP address with the ifconfig shell command
+    <ol style="list-style-type:lower-alpha;">
+        <li>You should set cat.on_hardware = false</li>
+        <li>If you just want to test on your local machine, set cat.test_server_url = 'ws://localhost:8001'. If you want other devices to connect to your local machine, set cat.test_server_url = 'ws://<local IP>:8001', where you can find your machine's local IP address with the ifconfig shell command</li>
+    </ol>
 
 2. In the terminal run: node test-server.js
+
 3. Simultaneously also run: python -m SimpleHTTPServer
+
 4. Navigate to http://localhost:8000 or http://<local IP>:8000 depending on (1)(b). Please note that only Chrome is offically supported.
