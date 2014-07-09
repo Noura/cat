@@ -24,7 +24,7 @@ Though the real purpose of this project is to create interconnected physical sys
 ### Steps:
 1. There are some connection settings near the top of static/js/app.js
 
-    <ol style="list-style-type:lower-alpha;">
+    <ol>
         <li>You should set cat.on_hardware = false</li>
         <li>If you just want to test on your local machine, set cat.test_server_url = 'ws://localhost:8001'. If you want other devices to connect to your local machine, set cat.test_server_url = 'ws://<local IP>:8001', where you can find your machine's local IP address with the ifconfig shell command</li>
     </ol>
